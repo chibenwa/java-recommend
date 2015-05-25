@@ -102,6 +102,10 @@ public class InMemoryPeopleManipulator implements PeopleManipulator{
         return peopleMap.get(name) != null;
     }
 
+    public void register(EventReceiver receiver) {
+        eventEmmiter.registerReceiver(receiver);
+    }
+
     private boolean arePeopleFriends(People friend1, People friend2) {
         Preconditions.checkArgument(!friend1.equals(friend2));
         return friend1.getFriends().contains(friend2.getName()) || friend2.getFriends().contains(friend1.getName());

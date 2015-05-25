@@ -5,7 +5,7 @@ import es.tellier.recommander.api.FriendshipEnsembleCalculator;
 import es.tellier.recommander.api.PeopleManipulator;
 import es.tellier.recommander.api.beans.People;
 import es.tellier.recommander.api.exceptions.PeopleNotFound;
-import es.tellier.recommander.recommander.Recommander;
+import es.tellier.recommander.recommander.Recommender;
 
 import java.util.HashSet;
 import java.util.List;
@@ -13,12 +13,12 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class InMemoryFriendshipBasedIntersectionRecommander implements Recommander {
+public class InMemoryFriendshipBasedIntersectionRecommender implements Recommender {
 
     private FriendshipEnsembleCalculator intersectionCalculator;
     private PeopleManipulator peopleManipulator;
 
-    public InMemoryFriendshipBasedIntersectionRecommander(PeopleManipulator peopleManipulator, FriendshipEnsembleCalculator intersectionCalculator) {
+    public InMemoryFriendshipBasedIntersectionRecommender(PeopleManipulator peopleManipulator, FriendshipEnsembleCalculator intersectionCalculator) {
         this.intersectionCalculator = intersectionCalculator;
         this.peopleManipulator = peopleManipulator;
     }

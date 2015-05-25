@@ -34,4 +34,5 @@ public class FriendshipRecommendation {
         }
         return false;
     }
+
 }

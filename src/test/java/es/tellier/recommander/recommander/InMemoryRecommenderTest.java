@@ -4,7 +4,7 @@ import es.tellier.recommander.api.beans.People;
 import es.tellier.recommander.api.exceptions.PeopleAlreadyFriend;
 import es.tellier.recommander.api.exceptions.PeopleManipulationException;
 import es.tellier.recommander.inMemory.InMemoryEventEmmiter;
-import es.tellier.recommander.inMemory.InMemoryFriendshipBasedIntersectionRecommander;
+import es.tellier.recommander.inMemory.InMemoryFriendshipBasedIntersectionRecommender;
 import es.tellier.recommander.inMemory.InMemoryFriendshipEnsembleCalculator;
 import es.tellier.recommander.inMemory.InMemoryPeopleManipulator;
 import org.junit.Before;
@@ -12,10 +12,10 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class InMemoryRecommanderTest {
+public class InMemoryRecommenderTest {
 
     private InMemoryPeopleManipulator peopleManipulator;
-    private InMemoryFriendshipBasedIntersectionRecommander recommander;
+    private InMemoryFriendshipBasedIntersectionRecommender recommander;
     private People me;
     private People f1;
     private People f2;
@@ -26,10 +26,10 @@ public class InMemoryRecommanderTest {
     private People pC;
     private People pD;
     private People pE;
-    private Recommander.InternalFriendshipRecommendation rpB;
-    private Recommander.InternalFriendshipRecommendation rpC;
-    private Recommander.InternalFriendshipRecommendation rpD;
-    private Recommander.InternalFriendshipRecommendation rpE;
+    private Recommender.InternalFriendshipRecommendation rpB;
+    private Recommender.InternalFriendshipRecommendation rpC;
+    private Recommender.InternalFriendshipRecommendation rpD;
+    private Recommender.InternalFriendshipRecommendation rpE;
 
     @Before
     public void setUp() throws PeopleManipulationException {
@@ -44,11 +44,11 @@ public class InMemoryRecommanderTest {
         pC = peopleManipulator.createPeople("pC");
         pD = peopleManipulator.createPeople("pD");
         pE = peopleManipulator.createPeople("pE");
-        rpB = new Recommander.InternalFriendshipRecommendation(pB, 0);
-        rpC = new Recommander.InternalFriendshipRecommendation(pC, 0);
-        rpD = new Recommander.InternalFriendshipRecommendation(pD, 0);
-        rpE = new Recommander.InternalFriendshipRecommendation(pE, 0);
-        recommander = new InMemoryFriendshipBasedIntersectionRecommander(peopleManipulator, new InMemoryFriendshipEnsembleCalculator());
+        rpB = new Recommender.InternalFriendshipRecommendation(pB, 0);
+        rpC = new Recommender.InternalFriendshipRecommendation(pC, 0);
+        rpD = new Recommender.InternalFriendshipRecommendation(pD, 0);
+        rpE = new Recommender.InternalFriendshipRecommendation(pE, 0);
+        recommander = new InMemoryFriendshipBasedIntersectionRecommender(peopleManipulator, new InMemoryFriendshipEnsembleCalculator());
     }
 
     @Test

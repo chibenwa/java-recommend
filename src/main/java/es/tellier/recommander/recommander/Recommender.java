@@ -5,7 +5,7 @@ import es.tellier.recommander.api.beans.People;
 import java.util.List;
 import java.util.Objects;
 
-public interface Recommander {
+public interface Recommender {
 
     List<InternalFriendshipRecommendation> buildRecommandedPeople(People people);
 
